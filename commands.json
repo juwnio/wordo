@@ -1,0 +1,77 @@
+{
+    "Analysis Operations": {
+        "scrap": "scrap"
+    },
+    "System Operations": {
+        "start_word": "start_word",
+        "check_status": "check_status",
+        "minimize": "minimize",
+        "maximize": "maximize",
+        "hide": "hide",
+        "show": "show"
+    },
+    "Document Operations": {
+        "create_new": "create_new",
+        "open": "open path=\"filename.docx\"",
+        "save": "save path=\"filename.docx\"",
+        "save_current": "save_current",
+        "close": "close",
+        "new_blank": "new_blank",
+        "print_doc": "print_doc",
+        "print_preview": "print_preview",
+        "export_pdf": "export_pdf path=\"output.pdf\"",
+        "count_words": "count_words",
+        "count_pages": "count_pages"
+    },
+    "Text Operations": {
+        "write": "write text=\"Your text here\"",
+        "add_heading": "add_heading text=\"Heading text\" level=1",
+        "find": "find text=\"search term\"",
+        "replace": "replace find=\"old\" replace=\"new\"",
+        "select": "select start=0 end=10",
+        "clear_formatting": "clear_formatting",
+        "select_all": "select_all",
+        "copy": "copy",
+        "cut": "cut",
+        "paste": "paste",
+        "undo": "undo",
+        "redo": "redo"
+    },
+    "Paragraph Operations": {
+        "align_left": "align_left",
+        "align_right": "align_right",
+        "align_center": "align_center",
+        "align_justify": "align_justify",
+        "add_bullet": "add_bullet",
+        "add_number": "add_number",
+        "set_spacing": "set_spacing value=2.0",
+        "set_indent": "set_indent left=1 right=1"
+    },
+    "Cursor Movements": {
+        "move_left": "move_left unit=\"word\" count=1",
+        "move_right": "move_right unit=\"word\" count=1",
+        "move_up": "move_up unit=\"paragraph\" count=1",
+        "move_down": "move_down unit=\"line\" count=1"
+    },
+    "Formatting": {
+        "italic": "italic value=True",
+        "underline": "underline value=True",
+        "font_size": "font_size size=12",
+        "font_name": "font_name name=\"Arial\"",
+        "font_color": "font_color color=255"
+    },
+    "Insertion": {
+        "insert_table": "insert_table rows=3 cols=4",
+        "insert_picture": "insert_picture path=\"image.jpg\""
+    },
+    "Advanced Operations": {
+        "add_bookmark": "add_bookmark name=\"mark1\"",
+        "goto_bookmark": "goto_bookmark name=\"mark1\"",
+        "add_comment": "add_comment text=\"Comment text\"",
+        "add_footnote": "add_footnote text=\"Footnote text\"",
+        "add_hyperlink": "add_hyperlink text=\"Click here\" url=\"https://example.com\"",
+        "add_page_break": "add_page_break",
+        "add_section_break": "add_section_break",
+        ">": "> close"
+    }
+}

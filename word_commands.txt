@@ -1,0 +1,91 @@
+! System Operations:
+
+start_word
+check_status
+minimize
+maximize
+hide
+show
+
+! Document Operations:
+
+create_new
+open path="filename.docx"
+save path="filename.docx"
+save_current
+close
+new_blank
+print_doc
+print_preview
+export_pdf path="output.pdf"
+count_words
+count_pages
+
+! Text Operations:
+
+write text="Your text here"
+add_heading text="Heading text" level=1
+find text="search term"
+replace find="old" replace="new"
+select start=0 end=10
+clear_formatting
+select_all
+copy
+cut
+paste
+undo
+redo
+
+! Paragraph Operations 
+
+align_left
+align_right
+align_center
+align_justify
+add_bullet
+add_number
+set_spacing value=2.0
+set_indent left=1 right=1
+
+! Cursor Movements:
+
+move_left unit="word" count=1
+move_right unit="word" count=1
+move_up unit="paragraph" count=1
+move_down unit="line" count=1
+
+! Formatting:
+
+!bold value=True
+italic value=True
+underline value=True
+font_size size=12
+font_name name="Arial"
+font_color color=255
+
+! Insertion:
+
+insert_table rows=3 cols=4
+insert_picture path="image.jpg"
+
+! Advanced Operations:
+
+add_bookmark name="mark1"
+goto_bookmark name="mark1"
+add_comment text="Comment text"
+add_footnote text="Footnote text"
+add_hyperlink text="Click here" url="https://example.com"
+add_page_break
+add_section_break
+
+!! Example usage sequence:
+
+> start_word
+> create_new
+> write text="Hello World"
+> bold value=True
+> move_right unit="word" count=1
+> add_bullet
+> save path="C:/Users/test/Documents/test.docx"
+> close
+
