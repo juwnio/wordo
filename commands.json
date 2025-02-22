@@ -1,6 +1,11 @@
 {
     "Analysis Operations": {
-        "scrap": "scrap"
+        "scrap": "scrap",
+        "scrap_document": "scrap_document",
+        "scrap_ribbon": "scrap_ribbon",
+        "scrap_application": "scrap_application",
+        "scrap_full": "scrap_full",
+        "scrap_accessibility": "scrap_accessibility"
     },
     "System Operations": {
         "start_word": "start_word",

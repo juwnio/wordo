@@ -3,12 +3,14 @@ import json
 from command_parser import CommandParser
 from word_controller import WordController
 from word_scraper import WordScraper
+from word_enhanced_scraper import WordEnhancedScraper
 
 class Wordo:
     def __init__(self):
-        # Initialize the Word controller and scraper
+        # Initialize the Word controller and scrapers
         self.controller = WordController()
         self.scraper = WordScraper()
+        self.enhanced_scraper = WordEnhancedScraper(self.controller.word)
         
         # Create commands dictionary from word_commands.txt
         self.commands = self._parse_commands_file()
@@ -119,6 +121,11 @@ class Wordo:
                 'count_words': self.controller.count_words,
                 'count_pages': self.controller.count_pages,
                 'scrap': lambda: self.scraper.scrap_word_window(),
+                'scrap_document': lambda: self.enhanced_scraper.get_document_state(),
+                'scrap_ribbon': lambda: self.enhanced_scraper.get_ribbon_state(),
+                'scrap_application': lambda: self.enhanced_scraper.get_application_state(),
+                'scrap_full': lambda: self.enhanced_scraper.get_full_state(),
+                'scrap_accessibility': lambda: self.enhanced_scraper.get_accessibility_info(),
             }
             
             if base_command not in command_mapping:
