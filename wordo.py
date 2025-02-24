@@ -2,6 +2,7 @@ import os
 import json
 from command_parser import CommandParser
 from word_controller import WordController
+from terminal_ui import TerminalUI
 
 class Wordo:
     def __init__(self):
@@ -18,6 +19,8 @@ class Wordo:
         # Initialize the command parser
         self.parser = CommandParser('commands.json')
         
+        self.ui = TerminalUI()
+    
     def _parse_commands_file(self):
         commands = {
             'Analysis Operations': {
@@ -137,33 +140,34 @@ class Wordo:
             # Execute the command with its arguments
             method = command_mapping[base_command]
             if args:
-                return method(**args)
+                result = method(**args)
             else:
-                return method()
+                result = method()
+            return TerminalUI.show_success(result) if result else ""
                 
         except Exception as e:
-            return f"Error executing command: {str(e)}"
+            return TerminalUI.show_error(str(e))
 
     def run(self):
-        print("Welcome to Wordo - Word Automation Tool")
-        print("Type 'help' for available commands or 'exit' to quit")
+        self.ui.show_logo()
         
         while True:
             try:
-                command = input("\nwordo> ").strip()
+                command = input(self.ui.PROMPT).strip()
                 result = self.execute_command(command)
                 
                 if result is None:  # Exit command
-                    print("Goodbye!")
+                    print(TerminalUI.show_info("\nGoodbye!"))
                     break
                     
-                print(result)
-                
+                if result:
+                    print(result)
+                    
             except KeyboardInterrupt:
-                print("\nInterrupted by user. Exiting...")
+                print(TerminalUI.show_info("\nInterrupted by user. Exiting..."))
                 break
             except Exception as e:
-                print(f"An error occurred: {str(e)}")
+                print(TerminalUI.show_error(f"An error occurred: {str(e)}"))
 
 if __name__ == "__main__":
     wordo = Wordo()

@@ -2,6 +2,7 @@ import win32com.client
 from word_scraper import WordScraper
 from button_controller import ButtonController
 import json
+from terminal_ui import TerminalUI
 
 class WordController:
     def __init__(self):
@@ -205,8 +206,8 @@ class WordController:
         """List all available buttons"""
         if self.word and self.button_controller:
             buttons = self.button_controller.get_available_buttons()
-            return json.dumps(buttons, indent=2)
-        return "Word is not running"
+            return TerminalUI.format_button_list(buttons)
+        return TerminalUI.show_error("Word is not running")
 
     def click_button(self, caption):
         """Click a button by its caption"""
