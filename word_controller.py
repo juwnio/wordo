@@ -1,14 +1,21 @@
 import win32com.client
+from word_scraper import WordScraper
+from button_controller import ButtonController
+import json
 
 class WordController:
     def __init__(self):
         self.word = None
         self.doc = None
+        self.scraper = None
+        self.button_controller = None
 
     def start_word(self):
         if not self.word:
             self.word = win32com.client.Dispatch("Word.Application")
             self.word.Visible = True
+            self.scraper = WordScraper(self.word)
+            self.button_controller = ButtonController(self.word)
             return "Microsoft Word started"
         return "Word is already running"
 
@@ -186,4 +193,29 @@ class WordController:
         if self.word:
             self.word.Selection.ParagraphFormat.LineSpacing = value
             return f"Line spacing set to {value}"
+        return "Word is not running"
+
+    def scrap(self):
+        """Execute scraping of Word window"""
+        if self.word and self.scraper:
+            return self.scraper.scrap_word_window()
+        return "Word is not running"
+
+    def list_buttons(self):
+        """List all available buttons"""
+        if self.word and self.button_controller:
+            buttons = self.button_controller.get_available_buttons()
+            return json.dumps(buttons, indent=2)
+        return "Word is not running"
+
+    def click_button(self, caption):
+        """Click a button by its caption"""
+        if self.word and self.button_controller:
+            return self.button_controller.click_button(caption)
+        return "Word is not running"
+
+    def click_button_by_id(self, button_id):
+        """Click a button by its ID"""
+        if self.word and self.button_controller:
+            return self.button_controller.click_button_by_id(button_id)
         return "Word is not running"

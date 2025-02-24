@@ -1,0 +1,32 @@
+{
+    "window": {
+        "handle": 918650,
+        "title": "",
+        "position": {
+            "left": 147,
+            "top": 234,
+            "right": 1107,
+            "bottom": 637
+        },
+        "size": {
+            "width": 960,
+            "height": 403
+        }
+    },
+    "ui_elements": {
+        "ribbon": "Ribbon information not available",
+        "statusbar": "Status bar information not available",
+        "document": {
+            "name": "Document1",
+            "path": "",
+            "pages": 1,
+            "words": 4,
+            "characters": 17,
+            "paragraphs": 1
+        }
+    },
+    "screen_resolution": {
+        "width": 1280,
+        "height": 720
+    }
+}

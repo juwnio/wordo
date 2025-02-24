@@ -1,6 +1,7 @@
 {
     "Analysis Operations": {
         "scrap": "scrap",
+        "#": "# To be iterated!!!",
         "scrap_document": "scrap_document",
         "scrap_ribbon": "scrap_ribbon",
         "scrap_application": "scrap_application",
@@ -76,7 +77,12 @@
         "add_footnote": "add_footnote text=\"Footnote text\"",
         "add_hyperlink": "add_hyperlink text=\"Click here\" url=\"https://example.com\"",
         "add_page_break": "add_page_break",
-        "add_section_break": "add_section_break",
+        "add_section_break": "add_section_break"
+    },
+    "Button Operations": {
+        "list_buttons": "list_buttons",
+        "click_button": "click_button caption=\"Save\"",
+        "click_button_by_id": "click_button_by_id id=123",
         ">": "> close"
     }
 }

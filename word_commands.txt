@@ -78,6 +78,12 @@ add_hyperlink text="Click here" url="https://example.com"
 add_page_break
 add_section_break
 
+! Button Operations:
+
+list_buttons
+click_button caption="Save"
+click_button_by_id id=123
+
 !! Example usage sequence:
 
 > start_word
