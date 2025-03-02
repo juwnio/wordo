@@ -95,15 +95,3 @@ click_button_by_id id=123
 > save path="C:/Users/test/Documents/test.docx"
 > close
 
-! Analysis Operations:
-
-scrap
-
-# To be iterated!!!
-scrap_document
-scrap_ribbon
-scrap_application
-scrap_full
-scrap_accessibility
-
-
